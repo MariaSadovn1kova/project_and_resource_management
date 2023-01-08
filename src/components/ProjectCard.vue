@@ -18,12 +18,23 @@
             ул. Некрасова 30
         </div>
         <div class="interaction__buttons">
-            <div class="edit__buttons">
+            <div class="edit__buttons" @click="ToggleCard">
                 
             </div>
             <div class="delete__buttons">
             
             </div>
+        </div>
+    </div>
+    <div class="dropdawn__inquiry">
+        <div class="inquiry__element">
+            Емеаемпуицщ
+        </div>
+        <div class="inquiry__element">
+            Емеаемпуицщ
+        </div>
+        <div class="open__button">
+            Открыть проект
         </div>
     </div>
 </template>
@@ -34,7 +45,6 @@
         height: 5rem;
         border-radius: 5px;
         box-shadow: 0px 4px 10px rgb(235, 235, 235);
-        margin-bottom: 1rem;
         display: flex;
 
         .project__status{
@@ -94,13 +104,50 @@
     
     .project__card:hover{
         box-shadow: 0px 4px 10px rgb(230, 230, 230);
-        cursor: pointer;
+    }
+
+    .dropdawn__inquiry{
+        margin-left: 3rem;
+        background-color: #EFFBF8;
+        margin-bottom: 1rem;
+        box-shadow: 0px 4px 10px rgb(230, 230, 230);
+        padding: 3rem;
+
+        .inquiry__element{
+            background-color: #fff;
+            height: 5rem;
+            border-radius: 5px;
+            box-shadow: 0px 4px 10px rgb(238, 238, 238);
+            margin-bottom: 2rem;
+        }
+
+        .open__button{
+            background-color: #34caa5;
+            color: #fff;
+            cursor: pointer;
+            height: 3.5rem;
+            padding: 1.2rem;
+            width: 15rem;
+            text-align: center;
+            border-radius: 15px;
+            margin-left: auto;
+            font-weight: 600;
+        }
     }
 </style>
 
 <script>
+    import { is } from '@babel/types';
+    import { ref } from 'vue';
+
     export default {
         name: "ProjectCard"
+    }
+
+    const is_expanded = ref(false)
+    const ToggleCard = () => {
+        is_expanded.value = !is.is_expanded.value
+        console.log("ячмо")
     }
 </script>
 

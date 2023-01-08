@@ -31,7 +31,7 @@
     .navbar_container{
         width: 15rem;
         box-shadow: 0px 4px 10px rgb(223, 223, 223);
-        height: 100vh;
+        height: auto;
         padding: 2rem;
         background-color: #fff;
 

@@ -52,7 +52,7 @@
                     color: #fff;
                     cursor: pointer;
                     height: 3.5rem;
-                    padding: 1.1rem;
+                    padding: 1.2rem;
                     width: 15rem;
                     text-align: center;
                     border-radius: 15px;
