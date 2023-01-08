@@ -7,11 +7,11 @@
                     Проекты за 2023 год
                 </div>
                 <div class="new_project__button">
-                    Создать новый проект
+                    + Создать новый проект
                 </div>
             </div>
             <div class="project__sub_menu">
-                <div class="sub_menu__item">
+                <div class="sub_menu__item active">
                     Все проекты
                 </div>
                 <div class="sub_menu__item">
@@ -20,6 +20,10 @@
                 <div class="sub_menu__item">
                     Завершенные проекты
                 </div>
+            </div>
+            <div class="card__container">
+                <ProjectCard/>
+                <ProjectCard/>
             </div>
         </div>
     </div>
@@ -44,8 +48,8 @@
                 }
 
                 .new_project__button{
-                    background-color: #5DE5C3;
-                    color: #1C6B66;
+                    background-color: #34caa5;
+                    color: #fff;
                     cursor: pointer;
                     height: 3.5rem;
                     padding: 1.1rem;
@@ -55,6 +59,10 @@
                     margin-left: auto;
                     margin-right: 3rem;
                     font-weight: 600;
+                }
+
+                .new_project__button:hover{
+                    box-shadow: 0px 4px 10px rgb(230, 230, 230);
                 }
             }
         }
@@ -68,8 +76,23 @@
                 margin-right: 2rem;
                 height: 100%;
                 padding-bottom: 1rem;
+                cursor: pointer;
+            }
+
+            .sub_menu__item{
+
+                &.active{
+                    border-bottom: 5px solid #5DE5C3;                    
+                }
+            }
+            
+            .sub_menu__item:hover{
                 border-bottom: 5px solid #5DE5C3;
             }
+        }
+
+        .card__container{
+            margin: 3rem 6rem 0 3rem;
         }
 
     }
@@ -77,10 +100,13 @@
 
 <script>
     import ProjectsNavbar from '../components/ProjectsNavbar.vue'
+    import ProjectCard from '../components/ProjectCard.vue'
+
     export default {
         name: "Projects",
         components:{
         ProjectsNavbar,
+        ProjectCard
         }
     }
 </script>
