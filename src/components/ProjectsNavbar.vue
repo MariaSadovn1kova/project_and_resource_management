@@ -33,6 +33,7 @@
         box-shadow: 0px 4px 10px rgb(223, 223, 223);
         height: 100vh;
         padding: 2rem;
+        background-color: #fff;
 
         .navbar__item{
             display: flex;

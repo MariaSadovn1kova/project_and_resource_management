@@ -18,7 +18,7 @@
         display: flex;
         background-color: #5DE5C3;
         height: 3.5rem;
-        padding-left: 6rem;
+        padding-left: 18rem;
         padding-right: 6rem;
         padding-top: 1rem;
 
