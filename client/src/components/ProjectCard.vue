@@ -1,10 +1,28 @@
 <script>
     import { is } from '@babel/types';
     import { ref } from 'vue';
+    import axios from 'axios'
 
     export default {
         name: "ProjectCard",
-        props: ["project"]
+        props: ["project"],
+
+        data(){
+            return{
+                customer: null,
+            };
+        },
+
+        created(){
+            axios.get(`http://localhost:3000/api/customer/${this.project.id_customer}`)
+            .then(responce => {
+                console.log(responce.data)
+                this.customer = responce.data
+            })
+            .catch(e => {
+                this.errors.push(e)
+            })
+        }
     }
 
 </script>
@@ -23,10 +41,10 @@
             {{project.date.slice(0,10)}}
         </div>
         <div class="download__client_name">
-            Иванов Иван Иванович
+            {{customer.name}}
         </div>
         <div class="download__address">
-            ул. Некрасова 30
+            {{project.address}}
         </div>
         <div class="interaction__buttons">
             <div class="edit__buttons" @click="ToggleCard">
@@ -37,7 +55,7 @@
             </div>
         </div>
     </div>
-    <div class="dropdawn__inquiry">
+    <!-- <div class="dropdawn__inquiry">
         <div class="inquiry__element">
             Емеаемпуицщ
         </div>
@@ -47,7 +65,7 @@
         <div class="open__button">
             <router-link class = "nav__link open__button" to="/project">Открыть проект</router-link>
         </div>
-    </div>
+    </div> -->
 </template>
 
 <style lang="scss">
