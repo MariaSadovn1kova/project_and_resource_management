@@ -26,6 +26,7 @@
     .project__container{
         display: flex;
         background-color: #F6FAF8;
+        height: 100vh;
 
         .project__header{
             padding: 3rem;

@@ -1,3 +1,14 @@
+<script>
+    import { is } from '@babel/types';
+    import { ref } from 'vue';
+
+    export default {
+        name: "ProjectCard",
+        props: ["project"]
+    }
+
+</script>
+
 <template>
     <div class="project__card">
         <div class="project__status">
@@ -9,7 +20,7 @@
             </div>
         </div>
         <div class="project__data">
-            12.01.2023
+            {{project.date.slice(0,10)}}
         </div>
         <div class="download__client_name">
             Иванов Иван Иванович
@@ -141,19 +152,3 @@
         }
     }
 </style>
-
-<script>
-    import { is } from '@babel/types';
-    import { ref } from 'vue';
-
-    export default {
-        name: "ProjectCard"
-    }
-
-    const is_expanded = ref(false)
-    const ToggleCard = () => {
-        is_expanded.value = !is.is_expanded.value
-        console.log("ячмо")
-    }
-</script>
-

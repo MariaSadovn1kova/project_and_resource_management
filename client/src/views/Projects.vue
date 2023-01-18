@@ -1,3 +1,34 @@
+<script>
+    import ProjectsNavbar from '../components/ProjectsNavbar.vue'
+    import ProjectCard from '../components/ProjectCard.vue'
+    import axios from 'axios'
+
+    export default {
+        name: "Projects",
+        components:{
+        ProjectsNavbar,
+        ProjectCard
+        },
+
+        data(){
+            return{
+                projectList: null,
+            };
+        },
+
+        created(){
+            axios.get(`http://localhost:3000/api/project`)
+            .then(responce => {
+                console.log(responce.data)
+                this.projectList = responce.data
+            })
+            .catch(e => {
+                this.errors.push(e)
+            })
+        }
+    }
+</script>
+
 <template>
     <div class="projects__container">
         <ProjectsNavbar/>
@@ -6,9 +37,9 @@
                 <div class="projects__tittle">
                     Проекты за 2023 год
                 </div>
-                <div class="new_project__button">
+                <router-link class = "nav__link new_project__button" to="/create">
                     Создать новый проект
-                </div>
+                </router-link>
             </div>
             <div class="project__sub_menu">
                 <div class="sub_menu__item active">
@@ -22,8 +53,7 @@
                 </div>
             </div>
             <div class="card__container">
-                <ProjectCard/>
-                <ProjectCard/>
+                <ProjectCard v-for="project in projectList" :key="project.id" :project="project"></ProjectCard>
             </div>
         </div>
     </div>
@@ -33,6 +63,7 @@
     .projects__container{
         display: flex;
         background-color: #F6FAF8;
+        height: 100vh;
 
         .projects__content{
             flex: auto;
@@ -97,32 +128,3 @@
 
     }
 </style>
-
-<script>
-    import ProjectsNavbar from '../components/ProjectsNavbar.vue'
-    import ProjectCard from '../components/ProjectCard.vue'
-    import axios from 'axios'
-
-    export default {
-        name: "Projects",
-        components:{
-        ProjectsNavbar,
-        ProjectCard
-        },
-
-        created(){
-            axios.get(`http://localhost:3000/api/project`)
-            .then(responce => {
-                console.log(responce.data)
-            })
-            .catch(e => {
-                this.errors.push(e)
-            })
-        }
-        // beforeMount(){
-        //     this.getList()
-        // } 
-    }
-
-
-</script>
