@@ -13,25 +13,23 @@
             };
         },
 
-        created(){
-            axios.get(`http://localhost:3000/api/customer/${this.project.id_customer}`)
-            .then(responce => {
-                console.log(responce.data)
-                this.customer = responce.data
-            })
-            .catch(e => {
-                this.errors.push(e)
-            })
-        }
+        // created(){
+        //     axios.get(`http://localhost:3000/api/customer/${this.project.id_customer}`)
+        //     .then(responce => {
+        //         this.customer = responce.data
+        //         console.log(this.project.id_customer)
+        //     })
+        //     .catch(e => {
+        //         this.errors.push(e)
+        //     })
+        // }
     }
-
 </script>
 
 <template>
     <div class="project__card">
-        <div class="project__status">
-            
-        </div>
+        <div v-if = "project.status == 'Готов'" class="project__status__finished" ></div>
+        <div v-else class="project__status__in-process" ></div>
         <div class="download__button-container">
             <div class="download__button">
                 XLSX
@@ -41,7 +39,7 @@
             {{project.date.slice(0,10)}}
         </div>
         <div class="download__client_name">
-            {{customer.name}}
+            <!-- {{project}} -->
         </div>
         <div class="download__address">
             {{project.address}}
@@ -81,12 +79,19 @@
         border-radius: 5px;
         box-shadow: 0px 4px 10px rgb(235, 235, 235);
         display: flex;
+        margin-top: 1rem;
 
-        .project__status{
+        .project__status__finished{
+            border-radius: 5px 0 0 5px;
+            width: 3rem;
+            background-color: #CCF3E9;
+        }
+        .project__status__in-process{
             border-radius: 5px 0 0 5px;
             width: 3rem;
             background-color: #D0EBF4;
         }
+
 
         .download__button-container{
             padding: 1rem 5rem 1rem 5rem;

@@ -2,27 +2,27 @@
     <div class="navbar_container">
         <div class="navbar__item">
             <div class="item__year">
-                2023
+                Клиент
             </div>
-            <div class="item__projects">
+            <!-- <div class="item__projects">
                 4 проекта
-            </div>
+            </div> -->
         </div>
         <div class="navbar__item">
             <div class="item__year">
-                2022
+                Здания
             </div>
-            <div class="item__projects">
+            <!-- <div class="item__projects">
                 25 проектов
-            </div>
+            </div> -->
         </div>
         <div class="navbar__item">
             <div class="item__year">
-                2021
+                Смета
             </div>
-            <div class="item__projects">
+            <!-- <div class="item__projects">
                 15 проектов
-            </div>
+            </div> -->
         </div>
     </div>
 </template>
@@ -39,6 +39,7 @@
             display: flex;
             margin-bottom: 1rem;
 
+
             .item__year{
                 margin-right: 1rem; 
                 font-weight: 600;
@@ -54,6 +55,10 @@
                 color: #3DC7BE;
                 cursor: pointer;
             }           
+        }
+
+        .navbar__item:hover{
+            cursor: pointer;
         }
     }
 </style>

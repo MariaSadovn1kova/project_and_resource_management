@@ -13,25 +13,28 @@
         data(){
             return{
                 projectList: null,
+                customerList: null,
+                rightCustomer: null,
             };
         },
 
         created(){
+
             axios.get(`http://localhost:3000/api/project`)
             .then(responce => {
-                console.log(responce.data)
                 this.projectList = responce.data
+                console.log(this.projectList)
             })
             .catch(e => {
                 this.errors.push(e)
             })
-        }
+        },
     }
 </script>
 
 <template>
     <div class="projects__container">
-        <ProjectsNavbar/>
+        <!-- <ProjectsNavbar/> -->
         <div class="projects__content">
             <div class="projects__header">
                 <div class="projects__tittle">
@@ -53,7 +56,7 @@
                 </div>
             </div>
             <div class="card__container">
-                <ProjectCard v-for="project in projectList" :key="project.id" :project="project"></ProjectCard>
+                <ProjectCard v-for="project in projectList" :key="project.id" :project="project"/>
             </div>
         </div>
     </div>
