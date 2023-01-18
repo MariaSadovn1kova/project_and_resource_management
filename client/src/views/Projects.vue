@@ -7,7 +7,7 @@
                     Проекты за 2023 год
                 </div>
                 <div class="new_project__button">
-                    + Создать новый проект
+                    Создать новый проект
                 </div>
             </div>
             <div class="project__sub_menu">
@@ -51,8 +51,8 @@
                     background-color: #34caa5;
                     color: #fff;
                     cursor: pointer;
-                    height: 3.5rem;
-                    padding: 1.2rem;
+                    height: 3rem;
+                    padding: 1rem;
                     width: 15rem;
                     text-align: center;
                     border-radius: 15px;

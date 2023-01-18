@@ -34,12 +34,18 @@
             Емеаемпуицщ
         </div>
         <div class="open__button">
-            Открыть проект
+            <router-link class = "nav__link open__button" to="/project">Открыть проект</router-link>
         </div>
     </div>
 </template>
 
 <style lang="scss">
+    .nav__link{
+        color: #fff;
+        font-weight: 400;
+        text-decoration: none;
+        font-weight: 600;
+    }
     .project__card{
         background-color: #fff;
         height: 5rem;
@@ -125,9 +131,9 @@
             background-color: #34caa5;
             color: #fff;
             cursor: pointer;
-            height: 3.5rem;
-            padding: 1.2rem;
-            width: 15rem;
+            height: 2.5rem;
+            padding: 0.6rem;
+            width: 11rem;
             text-align: center;
             border-radius: 15px;
             margin-left: auto;
