@@ -101,12 +101,28 @@
 <script>
     import ProjectsNavbar from '../components/ProjectsNavbar.vue'
     import ProjectCard from '../components/ProjectCard.vue'
+    import axios from 'axios'
 
     export default {
         name: "Projects",
         components:{
         ProjectsNavbar,
         ProjectCard
+        },
+
+        created(){
+            axios.get(`http://localhost:3000/api/project`)
+            .then(responce => {
+                console.log(responce.data)
+            })
+            .catch(e => {
+                this.errors.push(e)
+            })
         }
+        // beforeMount(){
+        //     this.getList()
+        // } 
     }
+
+
 </script>

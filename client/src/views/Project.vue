@@ -1,3 +1,13 @@
+<script>
+    import ProjectsNavbar from '../components/ProjectsNavbar.vue'
+    export default {
+        name: "Project",
+        components:{
+        ProjectsNavbar,
+        }
+    }
+</script>
+
 <template>
     <div class="project__container">
         <ProjectsNavbar/>
@@ -49,13 +59,3 @@
         }
 
 </style>
-
-<script>
-    import ProjectsNavbar from '../components/ProjectsNavbar.vue'
-    export default {
-        name: "Project",
-        components:{
-        ProjectsNavbar,
-        }
-    }
-</script>
