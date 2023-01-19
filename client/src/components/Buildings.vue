@@ -4,11 +4,13 @@
 
         data(){
             return{
-                active: "Общая информация"
+                active: "Общая информация",
+                foundation__active: "1"
             }
         },
         
         methods: {
+            // Переключение между элементами здания
             setActive_item1() {
                 this.active = "Общая информация"
                 console.log(this.active)
@@ -32,6 +34,27 @@
             setActive_item5(){
                 this.active = "Крыша"
                 console.log(this.active)
+            },
+
+            // Переключение между видами фундамента
+            setFoundationActive_item1(){
+                this.foundation__active = "1"
+                console.log(this.foundation__active)
+            },
+
+            setFoundationActive_item2(){
+                this.foundation__active = "2"
+                console.log(this.foundation__active)
+            },
+
+            setFoundationActive_item3(){
+                this.foundation__active = "3"
+                console.log(this.foundation__active)
+            },
+
+            setFoundationActive_item4(){
+                this.foundation__active = "4"
+                console.log(this.foundation__active)
             }
         }
     }
@@ -83,7 +106,7 @@
             </div>
 
             <!-- Общая информация -->
-            <form action="" class="base-information__form"  v-if = "this.active == 'Общая информация'">
+            <form action="" class="base-information__form bulding__form"  v-if = "this.active == 'Общая информация'">
                 <div class="left__forms">
                     <div class = "input__container">
                         <div class="input__tittle">Тип здания</div>
@@ -109,6 +132,67 @@
                     </div>
                     <div class="save__button">Сохранить здание</div>
                 </div>
+            </form>
+
+            <!-- Фундаменты -->
+            <form action="" class="base-information__form bulding__form"  v-if = "this.active == 'Фундамент'">
+                <div class="left__forms">
+                    <div class="foundation__types-navbar">
+                        <div  v-if = "this.foundation__active == '1'" class="foundation__types-active" v-on:click="setFoundationActive_item1">
+                            <img src="../assets/foundation__types/foundation__type1.svg">
+                        </div>
+                        <div v-else class="foundation__types">
+                            <img src="../assets/foundation__types/foundation__type1_0.svg" v-on:click="setFoundationActive_item1">
+                        </div>
+                        <div v-if = "this.foundation__active == '2'" class="foundation__types-active" v-on:click="setFoundationActive_item2">
+                            <img src="../assets/foundation__types/foundation__type2.svg">
+                        </div>
+                        <div v-else class="foundation__types" v-on:click="setFoundationActive_item2">
+                            <img src="../assets/foundation__types/foundation__type2_0.svg">
+                        </div>
+                        <div v-if = "this.foundation__active == '3'" class="foundation__types-active" v-on:click="setFoundationActive_item3">
+                            <img src="../assets/foundation__types/foundation__type3.svg">
+                        </div>
+                        <div v-else class="foundation__types" v-on:click="setFoundationActive_item3">
+                            <img src="../assets/foundation__types/foundation__type3_0.svg">
+                        </div>
+                        <div v-if = "this.foundation__active == '4'" class="foundation__types-active" v-on:click="setFoundationActive_item4">
+                            <img src="../assets/foundation__types/foundation__type4.svg">
+                        </div>
+                        <div v-else class="foundation__types" v-on:click="setFoundationActive_item4">
+                            <img src="../assets/foundation__types/foundation__type4_0.svg">
+                        </div>
+                    </div>
+                    <div class = "input__container">
+                        <div class="input__tittle">Тип бетона</div>
+                        <input type="text" class="buldings__type base-information__input">
+                    </div>  
+                    <div class = "input__container">
+                        <div class="input__tittle">Ширина</div>
+                        <input type="text" class="buldings__type base-information__input">
+                    </div> 
+                    <div class = "input__container">
+                        <div class="input__tittle">Длина</div>
+                        <input type="text" class="buldings__type base-information__input">
+                    </div> 
+                    <div class = "input__container">
+                        <div class="input__tittle">Высота</div>
+                        <input type="text" class="buldings__type base-information__input">
+                    </div> 
+                    <div class = "input__container">
+                        <div class="input__tittle">Толщина</div>
+                        <input type="text" class="buldings__type base-information__input">
+                    </div> 
+                    <div v-if = "this.foundation__active == '3' || this.foundation__active == '4'" class = "input__container">
+                        <div class="input__tittle">Длина первой ленты</div>
+                        <input type="text" class="buldings__type base-information__input">
+                    </div> 
+                    <div v-if = "this.foundation__active == '4'" class = "input__container">
+                        <div class="input__tittle">Длина второй ленты</div>
+                        <input type="text" class="buldings__type base-information__input">
+                    </div> 
+                </div>
+                <div class="right__forms">ff</div>
             </form>
         </div>
     </div>
@@ -142,7 +226,7 @@
             }
         }
 
-        .base-information__form{
+        .bulding__form{
             display: flex;
             justify-content: space-between;
         }
@@ -174,15 +258,15 @@
         }
 
         .input__container{
-            margin-top: 2rem;
+            margin-top: 2.5rem;
 
             .base-information__input{
             box-shadow: none;
             border: 1px solid #B4D4CA;
             border-radius: 5px;
             background-color: #EFF2FB;
-            height: 2rem;
-            width: 25rem;
+            height: 2.5rem;
+            width: 30rem;
             outline:none;
         }
 
@@ -218,6 +302,35 @@
             
             .sub_menu__item:hover{
                 border-bottom: 5px solid #31B8E8;
+            }
+        }
+
+        .foundation__types-navbar{
+            padding: 2rem 0;
+            display: flex;
+
+            .foundation__types{
+                width: 6rem;
+                height: 6rem;
+                background-color: #EFF2FB;
+                border-radius: 10px;
+                border: 1px solid #B4D4CA;
+                padding: 1.2rem;
+                margin-right: 2rem;
+            }
+
+            .foundation__types-active{
+                width: 6rem;
+                height: 6rem;
+                background-color: #31B8E8;
+                border-radius: 10px;
+                border: 1px solid #B4D4CA;
+                padding: 1.2rem;
+                margin-right: 2rem;
+            }
+
+            .foundation__types:hover{
+                cursor: pointer;
             }
         }
     }

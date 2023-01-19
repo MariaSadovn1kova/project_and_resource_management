@@ -14,7 +14,7 @@
                 active: "Клиент"
             }
         },
-        
+
         methods: {
             setActive_item1() {
                 this.active = "Клиент"
