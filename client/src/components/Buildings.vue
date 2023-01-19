@@ -5,7 +5,16 @@
         data(){
             return{
                 active: "Общая информация",
-                foundation__active: "1"
+                foundation__active: "1",
+                material_active: false, 
+                width: "",
+                length: "",
+                height: "",
+                depth: "",
+
+                calculation_concrete: "",
+                calculation_planking: "",
+                calculation_reinforcement: ""
             }
         },
         
@@ -55,7 +64,18 @@
             setFoundationActive_item4(){
                 this.foundation__active = "4"
                 console.log(this.foundation__active)
+            },
+
+            // Показать стройматериалы
+            setMaterialActive(){
+                this.calculation_concrete = this.height * this.depth * (3 * this.width + 2 * this.length)
+                this.calculation_reinforcement = 6 * (3 * this.width + 2 * this.length) + (2 * this.height + 2 * this.depth) * (3 * this.width + 2 * this.length)/80
+                this.calculation_planking = (3 * this.width + 2 * this.length) * 2 * this.height * (this.height / 0.2)
+
+                this.material_active = true
+                console.log(this.material_active)
             }
+        
         }
     }
 </script>
@@ -135,93 +155,113 @@
             </form>
 
             <!-- Фундаменты -->
-            <form action="" class="base-information__form bulding__form"  v-if = "this.active == 'Фундамент'">
-                <div class="left__forms">
-                    <div class="foundation__types-navbar">
-                        <div  v-if = "this.foundation__active == '1'" class="foundation__types-active" v-on:click="setFoundationActive_item1">
-                            <img src="../assets/foundation__types/foundation__type1.svg">
+            <div class = "foundation__container" v-if = "this.active == 'Фундамент'">
+                <form action="" class="base-information__form bulding__form">
+                    <div class="left__forms">
+                        <div class="foundation__types-navbar">
+                            <div  v-if = "this.foundation__active == '1'" class="foundation__types-active" v-on:click="setFoundationActive_item1">
+                                <img src="../assets/foundation__types/foundation__type1.svg">
+                            </div>
+                            <div v-else class="foundation__types">
+                                <img src="../assets/foundation__types/foundation__type1_0.svg" v-on:click="setFoundationActive_item1">
+                            </div>
+                            <div v-if = "this.foundation__active == '2'" class="foundation__types-active" v-on:click="setFoundationActive_item2">
+                                <img src="../assets/foundation__types/foundation__type2.svg">
+                            </div>
+                            <div v-else class="foundation__types" v-on:click="setFoundationActive_item2">
+                                <img src="../assets/foundation__types/foundation__type2_0.svg">
+                            </div>
+                            <div v-if = "this.foundation__active == '3'" class="foundation__types-active" v-on:click="setFoundationActive_item3">
+                                <img src="../assets/foundation__types/foundation__type3.svg">
+                            </div>
+                            <div v-else class="foundation__types" v-on:click="setFoundationActive_item3">
+                                <img src="../assets/foundation__types/foundation__type3_0.svg">
+                            </div>
+                            <div v-if = "this.foundation__active == '4'" class="foundation__types-active" v-on:click="setFoundationActive_item4">
+                                <img src="../assets/foundation__types/foundation__type4.svg">
+                            </div>
+                            <div v-else class="foundation__types" v-on:click="setFoundationActive_item4">
+                                <img src="../assets/foundation__types/foundation__type4_0.svg">
+                            </div>
                         </div>
-                        <div v-else class="foundation__types">
-                            <img src="../assets/foundation__types/foundation__type1_0.svg" v-on:click="setFoundationActive_item1">
+                        <div class = "input__container">
+                            <div class="input__tittle">Ширина</div>
+                            <input type="text" class="buldings__type base-information__input" v-model="width">
+                        </div> 
+                        <div class = "input__container">
+                            <div class="input__tittle">Длина</div>
+                            <input type="text" class="buldings__type base-information__input" v-model="length">
+                        </div> 
+                        <div class = "input__container">
+                            <div class="input__tittle">Высота</div>
+                            <input type="text" class="buldings__type base-information__input" v-model="height">
+                        </div> 
+                        <div class = "input__container">
+                            <div class="input__tittle">Толщина</div>
+                            <input type="text" class="buldings__type base-information__input" v-model="depth">
+                        </div> 
+                        <div v-if = "this.foundation__active == '4'" class = "input__container">
+                            <div class="input__tittle">Длина второй ленты</div>
+                            <input type="text" class="buldings__type base-information__input">
+                        </div> 
+                    </div>
+                    <div class="right__forms">
+                        <div class="material__tittle">
+                            Опалубка
                         </div>
-                        <div v-if = "this.foundation__active == '2'" class="foundation__types-active" v-on:click="setFoundationActive_item2">
-                            <img src="../assets/foundation__types/foundation__type2.svg">
+                        <div  class = "input__container">
+                            <div class="input__tittle">Ширина доски</div>
+                            <input type="text" class="buldings__type base-information__input">
+                        </div> 
+                        <div  class = "input__container">
+                            <div class="input__tittle">Длина доски</div>
+                            <input type="text" class="buldings__type base-information__input">
+                        </div> 
+                        <div  class = "input__container">
+                            <div class="input__tittle">Толщина доски</div>
+                            <input type="text" class="buldings__type base-information__input">
+                        </div> 
+                        <div class="material__tittle">
+                            Арматура
                         </div>
-                        <div v-else class="foundation__types" v-on:click="setFoundationActive_item2">
-                            <img src="../assets/foundation__types/foundation__type2_0.svg">
+                        <div  class = "input__container">
+                            <div class="input__tittle">Длина прутьев</div>
+                            <input type="text" class="buldings__type base-information__input">
+                        </div> 
+                        <div  class = "input__container">
+                            <div class="input__tittle">Ширина стержнев арматуры</div>
+                            <input type="text" class="buldings__type base-information__input">
+                        </div> 
+                        <div class="save__button" v-on:click="setMaterialActive">Расчитать</div>
+                    </div>
+                </form>
+                <div class="materials__container" v-if = "this.material_active == true">
+                    <div class="material__card">
+                        <div>
+                            Бетон
                         </div>
-                        <div v-if = "this.foundation__active == '3'" class="foundation__types-active" v-on:click="setFoundationActive_item3">
-                            <img src="../assets/foundation__types/foundation__type3.svg">
-                        </div>
-                        <div v-else class="foundation__types" v-on:click="setFoundationActive_item3">
-                            <img src="../assets/foundation__types/foundation__type3_0.svg">
-                        </div>
-                        <div v-if = "this.foundation__active == '4'" class="foundation__types-active" v-on:click="setFoundationActive_item4">
-                            <img src="../assets/foundation__types/foundation__type4.svg">
-                        </div>
-                        <div v-else class="foundation__types" v-on:click="setFoundationActive_item4">
-                            <img src="../assets/foundation__types/foundation__type4_0.svg">
+                        <div>
+                            {{this.calculation_concrete}}
                         </div>
                     </div>
-                    <div class = "input__container">
-                        <div class="input__tittle">Тип бетона</div>
-                        <input type="text" class="buldings__type base-information__input">
-                    </div>  
-                    <div class = "input__container">
-                        <div class="input__tittle">Ширина</div>
-                        <input type="text" class="buldings__type base-information__input">
-                    </div> 
-                    <div class = "input__container">
-                        <div class="input__tittle">Длина</div>
-                        <input type="text" class="buldings__type base-information__input">
-                    </div> 
-                    <div class = "input__container">
-                        <div class="input__tittle">Высота</div>
-                        <input type="text" class="buldings__type base-information__input">
-                    </div> 
-                    <div class = "input__container">
-                        <div class="input__tittle">Толщина</div>
-                        <input type="text" class="buldings__type base-information__input">
-                    </div> 
-                    <div v-if = "this.foundation__active == '3' || this.foundation__active == '4'" class = "input__container">
-                        <div class="input__tittle">Длина первой ленты</div>
-                        <input type="text" class="buldings__type base-information__input">
-                    </div> 
-                    <div v-if = "this.foundation__active == '4'" class = "input__container">
-                        <div class="input__tittle">Длина второй ленты</div>
-                        <input type="text" class="buldings__type base-information__input">
-                    </div> 
+                    <div class="material__card">
+                        <div>
+                            Арматура
+                        </div>
+                        <div>
+                            {{this.calculation_reinforcement}}
+                        </div>
+                    </div>
+                    <div class="material__card">
+                        <div>
+                            Опалубка
+                        </div>
+                        <div>
+                            {{this.calculation_planking}}
+                        </div>
+                    </div>
                 </div>
-                <div class="right__forms">
-                    <div class="material__tittle">
-                        Опалубка
-                    </div>
-                    <div  class = "input__container">
-                        <div class="input__tittle">Ширина доски</div>
-                        <input type="text" class="buldings__type base-information__input">
-                    </div> 
-                    <div  class = "input__container">
-                        <div class="input__tittle">Длина доски</div>
-                        <input type="text" class="buldings__type base-information__input">
-                    </div> 
-                    <div  class = "input__container">
-                        <div class="input__tittle">Толщина доски</div>
-                        <input type="text" class="buldings__type base-information__input">
-                    </div> 
-                    <div class="material__tittle">
-                        Арматура
-                    </div>
-                    <div  class = "input__container">
-                        <div class="input__tittle">Длина прутьев</div>
-                        <input type="text" class="buldings__type base-information__input">
-                    </div> 
-                    <div  class = "input__container">
-                        <div class="input__tittle">Ширина стержнев арматуры</div>
-                        <input type="text" class="buldings__type base-information__input">
-                    </div> 
-                    <div class="save__button">Расчитать</div>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 </template>
@@ -279,7 +319,7 @@
             text-align: center;
             border-radius: 15px;
             margin-left: auto;
-            margin-top: 11rem;
+            margin-top: 6rem;
             font-weight: 600;
         }
 
@@ -368,5 +408,19 @@
                 cursor: pointer;
             }
         }
+
+        .materials__container{
+                display: flex;
+                justify-content: space-between;
+                margin-top: 3rem;
+
+                .material__card{
+                    width: 30rem;
+                    height: 15rem;
+                    border-radius: 5px;
+                    background-color: #d6f8e6;
+                }
+
+            }
     }
 </style>
