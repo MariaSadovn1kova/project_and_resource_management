@@ -8,12 +8,13 @@
             Customer,
             Buildings
         },
+
         data(){
             return{
-                count: 4,
                 active: "Клиент"
             }
         },
+        
         methods: {
             setActive_item1() {
                 this.active = "Клиент"
