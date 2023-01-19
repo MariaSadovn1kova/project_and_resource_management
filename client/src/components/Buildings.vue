@@ -192,7 +192,35 @@
                         <input type="text" class="buldings__type base-information__input">
                     </div> 
                 </div>
-                <div class="right__forms">ff</div>
+                <div class="right__forms">
+                    <div class="material__tittle">
+                        Опалубка
+                    </div>
+                    <div  class = "input__container">
+                        <div class="input__tittle">Ширина доски</div>
+                        <input type="text" class="buldings__type base-information__input">
+                    </div> 
+                    <div  class = "input__container">
+                        <div class="input__tittle">Длина доски</div>
+                        <input type="text" class="buldings__type base-information__input">
+                    </div> 
+                    <div  class = "input__container">
+                        <div class="input__tittle">Толщина доски</div>
+                        <input type="text" class="buldings__type base-information__input">
+                    </div> 
+                    <div class="material__tittle">
+                        Арматура
+                    </div>
+                    <div  class = "input__container">
+                        <div class="input__tittle">Длина прутьев</div>
+                        <input type="text" class="buldings__type base-information__input">
+                    </div> 
+                    <div  class = "input__container">
+                        <div class="input__tittle">Ширина стержнев арматуры</div>
+                        <input type="text" class="buldings__type base-information__input">
+                    </div> 
+                    <div class="save__button">Расчитать</div>
+                </div>
             </form>
         </div>
     </div>
@@ -201,6 +229,12 @@
 <style lang="scss"> 
     .buldings__container{
         margin: 0 6rem 0 3rem;
+
+        .material__tittle{
+            color: #31B8E8;
+            border-bottom: 1px solid #31B8E8;
+            padding: 2rem 0 1rem 0;
+        }
 
         .sub__tittle{
         padding-top: 3rem; 
@@ -240,17 +274,18 @@
             color: #fff;
             cursor: pointer;
             height: 3rem;
-            padding: 1rem;
+            padding: 0.9rem;
             width: 15rem;
             text-align: center;
             border-radius: 15px;
             margin-left: auto;
-            margin-top: 12rem;
+            margin-top: 11rem;
             font-weight: 600;
         }
 
         .buldings__form{
             margin-top: 2rem;
+            margin-bottom: 5rem;
             box-shadow: 0px 4px 10px rgb(230, 230, 230);
             background-color: #fff;
             border-radius: 5px;

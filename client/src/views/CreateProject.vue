@@ -109,7 +109,7 @@
     .create-project__container{
         display: flex;
         background-color: #F6FAF8;
-        height: 100vh;
+        min-height: 100vh;
 
         .create-project__content{
             flex: auto;
