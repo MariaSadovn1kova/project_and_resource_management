@@ -1,12 +1,14 @@
 <script>
     import Customer from '../components/Customer.vue'
     import Buildings from '../components/Buildings.vue'
+    import Estimate from '../components/Estimate.vue'
 
     export default {
         name: "Project",
         components:{
             Customer,
-            Buildings
+            Buildings,
+            Estimate
         },
 
         data(){
@@ -68,6 +70,7 @@
             </div>
             <Customer  v-if = "this.active == 'Клиент'"/>
             <Buildings  v-if = "this.active == 'Здания'"/>
+            <Estimate  v-if = "this.active == 'Смета'"/>
         </div>
     </div>
 </template>
