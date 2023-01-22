@@ -237,27 +237,27 @@
                 </form>
                 <div class="materials__container" v-if = "this.material_active == true">
                     <div class="material__card">
-                        <div>
+                        <div class="calculation-material__tittle">
                             Бетон
                         </div>
                         <div>
-                            {{this.calculation_concrete}}
+                            {{this.calculation_concrete}} куб. метров
                         </div>
                     </div>
                     <div class="material__card">
-                        <div>
+                        <div class="calculation-material__tittle">
                             Арматура
                         </div>
                         <div>
-                            {{this.calculation_reinforcement}}
+                            {{this.calculation_reinforcement}} метров
                         </div>
                     </div>
                     <div class="material__card">
-                        <div>
+                        <div class="calculation-material__tittle">
                             Опалубка
                         </div>
                         <div>
-                            {{this.calculation_planking}}
+                            {{this.calculation_planking}} метров
                         </div>
                     </div>
                 </div>
@@ -415,10 +415,18 @@
                 margin-top: 3rem;
 
                 .material__card{
+                    padding: 2rem;
+                    display: flex;
                     width: 30rem;
-                    height: 15rem;
+                    height: 5rem;
                     border-radius: 5px;
-                    background-color: #d6f8e6;
+                    background-color: #e9faf1;
+                    font-size: 1rem;
+                    justify-content: space-between;
+
+                    .calculation-material__tittle{
+                        font-size: 1rem;
+                    }
                 }
 
             }
