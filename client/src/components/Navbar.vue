@@ -3,12 +3,10 @@
         <div>
             <img class="company__logo" src="../assets/company_logo.svg">                
         </div>
-        <router-link v-if="this.activePage=='Проекты'" class = "nav__link-active" to="/projects">Проекты</router-link>
-        <router-link v-else class = "nav__link" to="/projects" @click="setActive('Проекты')">Проекты</router-link>
-        <router-link v-if="this.activePage=='Стройматериалы'" class = "nav__link-active" to="/materials">Стройматериалы</router-link>
-        <router-link v-else class = "nav__link" to="/materials" @click="setActive('Стройматериалы')">Стройматериалы</router-link>
-        <router-link v-if="this.activePage=='Формулы'" class = "nav__link-active" to="/materials">Формулы</router-link>
-        <router-link v-else class = "nav__link" to="/materials" @click="setActive('Формулы')">Формулы</router-link>
+        <router-link class = "nav__link" :class = "{'active' :this.activePage=='Проекты'}" to="/projects" @click="setActive('Проекты')">Проекты</router-link>
+        <router-link class = "nav__link" :class = "{'active' :this.activePage=='Стройматериалы'}" to="/materials" @click="setActive('Стройматериалы')">Строматериалы</router-link>
+        <router-link class = "nav__link" :class = "{'active' :this.activePage=='Формулы'}" to="/projects" @click="setActive('Формулы')">Формулы</router-link>
+
         <div class="user__name">
             И. И. Иванов
         </div>
@@ -29,7 +27,6 @@ export default {
     methods: {
         setActive(newActive){
             this.activePage = newActive;
-            console.log(this.activePage)
         }
     }
 }
@@ -49,13 +46,15 @@ export default {
             font-weight: 600;
             padding: 1rem;
         }
-        .nav__link-active{
+
+        .nav__link.active{
             text-decoration: none;
             font-weight: 600;
             padding: 1rem;
             color: #34CAA5;
             border-bottom: 3px solid #34CAA5;
         }
+
         .nav__link:hover{
             color: #34CAA5;
         }
