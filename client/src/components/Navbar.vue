@@ -13,39 +13,12 @@
     </div>
 </template>
 
-<style lang="scss">
-    .nav__container{
-        display: flex;
-        background-color: #34caa5;
-        height: 3.5rem;
-        padding-left: 18rem;
-        padding-right: 6rem;
-        padding-top: 1rem;
-
-        .nav__link{
-            color: #fff;
-            font-weight: 400;
-            text-decoration: none;
-            padding-right: 2rem;
-            font-weight: 600;
-        }
-
-        .user__name{
-            margin-left: auto;
-            color: #fff;
-            padding-right: 2rem;
-            font-weight: 600;
-        }
-
-        .user_picture{
-            width: 2rem;
-            color: white;
-        }
-    }
-</style>
-
 <script>
-    export default {
-
-    }
+export default {
+    name: 'main-navbar'
+}
 </script>
+
+<style>
+
+</style>

@@ -1,133 +1,16 @@
-<script>
-    import ProjectsNavbar from '../components/ProjectsNavbar.vue'
-    import ProjectCard from '../components/ProjectCard.vue'
-    import axios from 'axios'
-
-    export default {
-        name: "Projects",
-        components:{
-        ProjectsNavbar,
-        ProjectCard
-        },
-
-        data(){
-            return{
-                projectList: null,
-                customerList: null,
-                rightCustomer: null,
-            };
-        },
-
-        created(){
-
-            axios.get(`http://localhost:3000/api/project`)
-            .then(responce => {
-                this.projectList = responce.data
-                console.log(this.projectList)
-            })
-            .catch(e => {
-                this.errors.push(e)
-            })
-        },
-    }
-</script>
-
 <template>
-    <div class="projects__container">
-        <!-- <ProjectsNavbar/> -->
-        <div class="projects__content">
-            <div class="projects__header">
-                <div class="projects__tittle">
-                    Проекты за 2023 год
-                </div>
-                <router-link class = "nav__link new_project__button" to="/create">
-                    Создать новый проект
-                </router-link>
-            </div>
-            <div class="project__sub_menu">
-                <div class="sub_menu__item active">
-                    Все проекты
-                </div>
-                <div class="sub_menu__item">
-                    Проекты в процессе
-                </div>
-                <div class="sub_menu__item">
-                    Завершенные проекты
-                </div>
-            </div>
-            <div class="card__container">
-                <ProjectCard v-for="project in projectList" :key="project.id" :project="project"/>
-            </div>
-        </div>
-    </div>
+      <div>
+        абоба
+      </div>
 </template>
 
-<style lang="scss">
-    .projects__container{
-        display: flex;
-        background-color: #F6FAF8;
-        height: 100vh;
+<script>
+import PostForm from "../components/Navbar.vue"
+export default {
 
-        .projects__content{
-            flex: auto;
+}
+</script>
 
-            .projects__header{
-            padding: 3rem;
-            display: flex;
-            width: 100%;
+<style>
 
-                .projects__tittle{
-                    font-size: 1.4rem;
-                    color: #525252;
-                }
-
-                .new_project__button{
-                    background-color: #34caa5;
-                    color: #fff;
-                    cursor: pointer;
-                    height: 3rem;
-                    padding: 1rem;
-                    width: 15rem;
-                    text-align: center;
-                    border-radius: 15px;
-                    margin-left: auto;
-                    margin-right: 3rem;
-                    font-weight: 600;
-                }
-
-                .new_project__button:hover{
-                    box-shadow: 0px 4px 10px rgb(230, 230, 230);
-                }
-            }
-        }
-
-        .project__sub_menu{
-            margin: 0 6rem 0 3rem;
-            display: flex;
-            border-bottom: 1px solid #D8D8D8;
-
-            .sub_menu__item{
-                margin-right: 2rem;
-                height: 100%;
-                padding-bottom: 1rem;
-                cursor: pointer;
-            }
-
-            .sub_menu__item{
-
-                &.active{
-                    border-bottom: 5px solid #5DE5C3;                    
-                }
-            }
-            
-            .sub_menu__item:hover{
-                border-bottom: 5px solid #5DE5C3;
-            }
-        }
-
-        .card__container{
-            margin: 3rem 6rem 0 3rem;
-        }
-
-    }
 </style>

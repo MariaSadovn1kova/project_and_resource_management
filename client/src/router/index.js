@@ -14,11 +14,6 @@ const routes = [
     path: '/materials',
     name: 'Materials',
     component: () => import('../views/Materials.vue')  
-  },
-  {
-    path: '/create',
-    name: 'CreateProject',
-    component: () => import('../views/CreateProject.vue')  
   }
 ]
 
