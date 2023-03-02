@@ -1,7 +1,10 @@
 <template>
-  <div>
-    <main-navbar/>
-    <router-view/>
+  <div class="app">
+    <main-navbar class="main__navbar"/>
+    <div class="app__container">
+      <main-sidebar class="main__sidebar"/>
+      <router-view class="router-view"/>
+    </div>
   </div>
 </template>
 
@@ -20,5 +23,28 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
     font-size: 0.9rem;
+
+    .app{
+      height: 100vh;
+      background-color: #F6FAF8;
+
+      .main__navbar{
+        position: absolute;
+        width: 100%;
+      }
+      
+      .app__container{
+        display: flex;
+        
+        .main__sidebar {
+          padding-top: 6rem;
+        }
+
+        .router-view{
+          width: 100%;
+          padding: 6rem 10rem 0rem 8rem;
+        }
+      }
+    }
   }
 </style>
