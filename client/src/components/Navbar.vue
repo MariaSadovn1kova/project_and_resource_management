@@ -34,10 +34,10 @@ export default {
         flex-direction: row;
         background-color: #fff;
         box-shadow: 0px 4px 4px #DEE1E0;
-        padding: 0rem 4rem 0rem 4rem;
+        padding: 0rem 5rem 0rem 5rem;
         .company__logo{
             width: 4rem;
-            margin-right: 12rem;
+            margin-right: 11rem;
         }
 
         .nav__link{
@@ -56,7 +56,7 @@ export default {
         }
 
         .nav__link:hover{
-            background-color: #e8faf5;
+            background-color: #E8F6F3;
             color: #34CAA5;
         }
 
@@ -69,7 +69,7 @@ export default {
         }
 
         .user__container:hover{
-            background-color: #e8faf5;
+            background-color: #E8F6F3;
             cursor: pointer;
         }
     }

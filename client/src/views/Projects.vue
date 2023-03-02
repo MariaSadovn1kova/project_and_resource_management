@@ -1,11 +1,10 @@
 <template>
-      <div>
+      <div class="projects__container">
         абоба
       </div>
 </template>
 
 <script>
-import PostForm from "../components/Navbar.vue"
 export default {
 
 }
