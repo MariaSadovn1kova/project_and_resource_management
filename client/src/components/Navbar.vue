@@ -1,9 +1,9 @@
 <template>
     <div class="nav__container">
         <img class="company__logo" src="../assets/company_logo.svg">                
-        <router-link class = "nav__link" :class = "{'active' :this.activePage=='Проекты'}" to="/projects" @click="setActive('Проекты')">Проекты</router-link>
-        <router-link class = "nav__link" :class = "{'active' :this.activePage=='Стройматериалы'}" to="/materials" @click="setActive('Стройматериалы')">Строматериалы</router-link>
-        <router-link class = "nav__link" :class = "{'active' :this.activePage=='Формулы'}" to="/projects" @click="setActive('Формулы')">Формулы</router-link>
+        <router-link class = "nav__link" :class = "{'active' :this.activePage=='projects'}" to="/projects" @click="setActive('projects')">Проекты</router-link>
+        <router-link class = "nav__link" :class = "{'active' :this.activePage=='materials'}" to="/materials" @click="setActive('materials')">Строматериалы</router-link>
+        <router-link class = "nav__link" :class = "{'active' :this.activePage=='formulas'}" to="/projects" @click="setActive('formulas')">Формулы</router-link>
         <div class="user__container">
             <div class="user__name">
                 И. И. Иванов
@@ -17,7 +17,7 @@ export default {
     name: 'main-navbar',
     data(){
         return{
-            activePage: "Проекты"
+            activePage: "projects"
         }
     },
     methods: {
@@ -37,7 +37,7 @@ export default {
         padding: 0rem 4rem 0rem 4rem;
         .company__logo{
             width: 4rem;
-            margin-right: 10rem;
+            margin-right: 12rem;
         }
 
         .nav__link{

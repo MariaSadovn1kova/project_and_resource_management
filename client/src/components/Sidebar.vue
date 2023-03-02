@@ -12,6 +12,7 @@ export default {
 
 <style lang="scss" scoped>
     .sidebar__container{
+        flex-shrink: 0;
         width: 15rem;
         background-color: #fff;
         box-shadow: 0px 4px 4px #DEE1E0;
