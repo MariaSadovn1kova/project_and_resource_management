@@ -42,7 +42,7 @@
 
         .router-view{
           width: 100%;
-          padding: 6rem 6rem 0rem 6rem;
+          padding: 8rem 6rem 0rem 6rem;
         }
       }
     }

@@ -8,6 +8,7 @@
             <div class="user__name">
                 И. И. Иванов
             </div>
+            <img class="user__img" src="@/assets/user__picture.svg" alt="">
         </div>
     </div>
 </template>
@@ -62,15 +63,22 @@ export default {
 
         .user__container{
             display: flex;
+            margin-left: auto;            
+        }
+        .user__name{
             font-weight: 600;
             color: #34CAA5;
-            margin-left: auto;
             padding: 1rem;
         }
 
         .user__container:hover{
             background-color: #E8F6F3;
             cursor: pointer;
+        }
+
+        .user__img{
+            width: 2rem;
+            margin-right: 1rem;
         }
     }
 </style>

@@ -3,7 +3,7 @@ import App from './App.vue'
 import './registerServiceWorker'
 import router from './router'
 import store from './store'
-import components from "@/components/UI"
+import components from "@/components"
 
 const app = createApp(App)
 

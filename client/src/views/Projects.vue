@@ -1,7 +1,16 @@
 <template>
-      <div class="projects__container">
-        абоба
+  <div class="projects__container">
+    <div class="header__container">
+      <div class="projects__tittle">
+        Проекты за 2023 год
       </div>
+      <custom-button>
+        Новый проект
+        <img class="projects__img" src="@/assets/add__picture.svg">
+      </custom-button>
+    </div>
+    <local-navbar/>
+  </div>
 </template>
 
 <script>
@@ -10,6 +19,18 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss" scoped>
+.projects__container{
+  .header__container{
+    display: flex;
+    justify-content: space-between;
+    .projects__tittle{
+      font-size: 1.2rem;
+      color: #525252;
+    }
+    .projects__img{
+      width: 1rem;
+    }
+  }
+}
 </style>
