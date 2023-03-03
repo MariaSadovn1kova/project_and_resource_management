@@ -1,6 +1,6 @@
 <template>
     <div class="nav__container">
-        <img class="company__logo" src="../assets/company_logo.svg">                
+        <img class="company__logo" src="@/assets/company_logo.svg">                
         <router-link class = "nav__link" :class = "{'active' :this.activePage=='projects'}" to="/projects" @click="setActive('projects')">Проекты</router-link>
         <router-link class = "nav__link" :class = "{'active' :this.activePage=='materials'}" to="/materials" @click="setActive('materials')">Строматериалы</router-link>
         <router-link class = "nav__link" :class = "{'active' :this.activePage=='formulas'}" to="/projects" @click="setActive('formulas')">Формулы</router-link>

@@ -10,6 +10,7 @@
       </custom-button>
     </div>
     <local-navbar/>
+    <input class="projects__search" type="text" placeholder="Адрес проекта...">
   </div>
 </template>
 
@@ -31,6 +32,15 @@ export default {
     .projects__img{
       width: 1rem;
     }
+  }
+  .projects__search{
+    margin-top: 2rem;
+    width: 30rem;
+    height: 2.5rem;
+    border-radius: 2rem;
+    border: 1px solid #E4E7E6;
+    padding: 1rem;
+    outline: none;
   }
 }
 </style>

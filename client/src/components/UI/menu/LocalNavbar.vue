@@ -7,7 +7,7 @@
         Текущие проекты
     </div>
     <div class="local-navbar__item">
-        Завершенные 
+        Завершенные проекты
     </div>
   </div>
 </template>
@@ -24,7 +24,7 @@ export default {
     border-bottom: 1px solid #D8D8D8;
     padding: 1rem 0 1rem 0;
     .local-navbar__item{
-        margin-right: 1.5rem;
+        margin-right: 2rem;
     }
     .local-navbar__item:hover{
         color: #34CAA5;
