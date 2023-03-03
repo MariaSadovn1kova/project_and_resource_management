@@ -34,6 +34,7 @@ export default {
 
 .download-button__container:hover{
     cursor: pointer;
+    background-color: #d9f3ed;
 }
 
 </style>

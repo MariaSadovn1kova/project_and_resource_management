@@ -9,7 +9,7 @@
         <img class="projects__img" src="@/assets/add__picture.svg">
       </custom-button>
     </div>
-    <local-navbar/>
+    <local-navbar :menu_items = "menu_items" :active_menu_item = "active_menu_item" @change="changeActive"/>
     <input class="projects__search" type="text" placeholder="Адрес проекта...">
     <project-list/>
   </div>
@@ -17,7 +17,21 @@
 
 <script>
 export default {
-
+  data() {
+    return{
+      menu_items:[
+        { id: 1, title: 'Все посты', name: 'all' },
+        { id: 2, title: 'Текущие проекты', name: 'unfinished' },
+        { id: 3, title: 'Завершенные проекты', name: 'finished' }
+      ],
+      active_menu_item: 'all'
+    }
+  },
+  methods: {
+    changeActive(active){
+      this.active_menu_item = active;
+    }
+  }
 }
 </script>
 

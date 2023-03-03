@@ -3,10 +3,13 @@
     <div class="project__status"></div>
     <div class="project-info__container">
       <download-button/>
-      <div class="project__data">12.01.2023</div>
-      <div class="project__client-name">Иванов Иван Иванович</div>
-      <div class="project__address">ул. Некрасова 30</div>
-      <div class="project__bth-box"></div>
+      <div class="project__data info">12.01.2023</div>
+      <div class="project__client-name info">Иванов Иван Иванович</div>
+      <div class="project__address info">ул. Некрасова 30</div>
+      <div class="project__bth-box">
+        <button class="btn open__btn"></button>
+        <button class="btn delete__btn"></button>                    
+      </div>
     </div>
   </div>
 </template>
@@ -28,13 +31,18 @@ export default {
   .project__status{
     width: 3rem;
     height: 100%;
-    background-color: #D0EBF4;
+    background-color: #FFE99C;
     border-radius: 0.5rem 0 0 0.5rem;
   }
   .project-info__container{
+    width: 100%;
     padding: 1.5rem 2.5rem 1.5rem 2.5rem;
     display: flex;
-    justify-content: end;
+    justify-content: space-between;
+    color: #828282;
+  }
+  .info{
+    padding-top: 1rem;
   }
 }
 </style>
