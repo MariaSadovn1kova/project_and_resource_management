@@ -11,6 +11,7 @@
     </div>
     <local-navbar/>
     <input class="projects__search" type="text" placeholder="Адрес проекта...">
+    <project-list/>
   </div>
 </template>
 

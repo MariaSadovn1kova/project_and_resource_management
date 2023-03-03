@@ -26,7 +26,7 @@ export default {
         width: 15rem;
         background-color: #fff;
         box-shadow: 0px 4px 4px #DEE1E0;
-        height: 100vh;
+        min-height: 100vh;
 
         .sidebar__element{
             padding: 0.8rem 2rem 0.8rem 2rem;

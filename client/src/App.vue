@@ -25,7 +25,7 @@
     font-size: 0.9rem;
 
     .app{
-      height: 100vh;
+      min-height: 100vh;
       background-color: #F6FAF8;
 
       .main__navbar{
@@ -35,7 +35,7 @@
       
       .app__container{
         display: flex;
-        
+
         .main__sidebar {
           padding-top: 6rem;
         }
