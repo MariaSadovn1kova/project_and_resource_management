@@ -1,14 +1,18 @@
 <template>
   <div class="projectp-list__container">
-    <project-item/>
-    <project-item/>
-    <project-item/>
+    <project-item v-for="project in projects" :key = "project.id" :project = "project"/>
   </div>
 </template>
 
 <script>
 export default {
- name: 'project-list'
+  name: 'project-list',
+  props: {
+    projects: {
+      type: Array,
+      required: true
+    }
+  }
 }
 </script>
 
