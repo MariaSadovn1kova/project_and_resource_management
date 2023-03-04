@@ -1,6 +1,9 @@
 <template>
   <div class="project-item__container">
-    <div class="project__status" :class = "{'finished' :project.status == 'finished', 'unfinished':project.status == 'unfinished'}"></div>
+    <div class="project__status" :class = "{'finished' :project.status == 'finished', 'unfinished':project.status == 'unfinished'}">
+      <img v-if="project.status === 'unfinished'" src="@/assets/unfinished__picture.svg" class="unfinished__picture">
+      <img v-else src="@/assets/finished__picture.svg" class="unfinished__picture">
+    </div>
     <div class="project-info__container">
       <download-button/>
       <div class="project__date info">{{ project.date }}</div>
@@ -42,6 +45,10 @@ export default {
     width: 3rem;
     height: 100%;
     border-radius: 0.5rem 0 0 0.5rem;
+    padding: 2.2rem 0 0 0.7rem;
+    .unfinished__picture{
+      width: 1.5rem;
+    }
   }
     .unfinished{
       background-color: #D3EFFF;
