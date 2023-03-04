@@ -30,13 +30,13 @@ export default {
         { title:'2023'},
       ],
       projects: [
-        {id: 1, address: 'ул. Некрасова 30', client_name: 'Иванов Иван Иванович', date: '12.01.2020', status: 'unfinished'},
+        {id: 1, address: 'ул. Поленова 30', client_name: 'Иванов Иван Иванович', date: '12.01.2020', status: 'unfinished'},
         {id: 2, address: 'ул. Некрасова 31', client_name: 'Петров Петр Петрович', date: '12.01.2023', status: 'finished'},
       ],
       active_menu_item: 'all',
       active_sidebar_menu_item: '2023',
       searchQuery: '',
-      selectedSort: ''
+      selectedSort: '',
     }
   },
   methods: {

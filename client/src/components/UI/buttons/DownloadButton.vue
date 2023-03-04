@@ -14,7 +14,7 @@ export default {
 <style lang="scss" scoped>
 .download-button__container{
     background-color: #E8F6F3;
-    width: 7.5rem;
+    width: 7rem;
     height: 3rem;
     display: flex;
     border-radius: 5rem;
@@ -28,7 +28,7 @@ export default {
     }
 
     .download-button__picture{
-        width: 1.5rem;
+        width: 1rem;
     }
 }
 
