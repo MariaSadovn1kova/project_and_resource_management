@@ -12,6 +12,7 @@
     </div>
     <div class="project__bth-box">
       <button class="btn open__btn">
+        <div class="open__title">Открыть</div>
         <img class = "open__picture" src="@/assets/openProject__picture.svg">
       </button>
       <button class="btn delete__btn">
@@ -69,10 +70,10 @@ export default {
   .project__bth-box{
     padding-top: 0.4rem;
     margin-left: auto;
-    padding: 1.8rem 2.5rem 1.8rem 2.5rem;
+    padding: 1.5rem 2.5rem 1.5rem 2.5rem;
+    display: flex;
     .btn{
-      width: 2.3rem;
-      height: 2.3rem;
+      height: 3rem;
       border-radius: 2rem;
       border: none;
       margin-left: 0.8rem;
@@ -91,10 +92,19 @@ export default {
     .open__btn{
       background-color: #daecf7;
       padding-top: 0.1rem;
+      display: flex;
+      padding: 1rem 1rem;
+      color: #39BAE8;
+      font-weight: 600;
+
+      .open__title{
+        margin-right: 0.5rem;
+      }
     }
     .delete__btn{
       background-color: #F9DDD9;
       padding-top: 0.1rem;
+      width: 2.3rem;
     }
 
     .open__btn:hover{

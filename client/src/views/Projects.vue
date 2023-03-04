@@ -4,7 +4,8 @@
       <div class="projects__tittle">
         Проекты за 2023 год
       </div>
-      <custom-button>
+      <router-link to="/">
+        <custom-button>
         <div class="button__content">  
           <div class="button__title">
             Новый проект
@@ -12,6 +13,7 @@
           <img class="projects__img" src="@/assets/add__picture.svg">
         </div>
       </custom-button>
+      </router-link>
     </div>
     <local-navbar :menu_items = "menu_items" :active_menu_item = "active_menu_item" @change="changeActive"/>
     <input class="projects__search" type="text" placeholder="Адрес проекта..." v-model="searchQuery">
@@ -24,7 +26,7 @@ export default {
   data() {
     return{
       menu_items:[
-        { id: 1, title: 'Все посты', name: 'all' },
+        { id: 1, title: 'Все проекты', name: 'all' },
         { id: 2, title: 'Текущие проекты', name: 'unfinished' },
         { id: 3, title: 'Завершенные проекты', name: 'finished' }
       ],
@@ -50,10 +52,10 @@ export default {
   },
   computed:{
         sortedProject(){
-            return [...this.projects].sort((project1, project2) => project1[this.selectedSort]?.localeCompare(project2[this.selectedSort]))
+          return [...this.projects].sort((project1, project2) => project1[this.selectedSort]?.localeCompare(project2[this.selectedSort]))
         },
         sortedAndSearchProject(){
-            return this.sortedProject.filter(project => project.address.includes(this.searchQuery))
+          return this.sortedProject.filter(project => project.address.includes(this.searchQuery))
         }
     }
 }
