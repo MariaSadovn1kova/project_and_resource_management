@@ -12,7 +12,7 @@ export default {
 
 <style lang="scss" scoped>
     .custom__btn{
-        padding: 1rem 1.2rem;
+        padding: 1rem 1.8rem;
         background: none;
         border: none;
         color: white;

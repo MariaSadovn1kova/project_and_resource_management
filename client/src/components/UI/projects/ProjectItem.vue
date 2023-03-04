@@ -6,14 +6,14 @@
       <div class="project__date info">{{ project.date }}</div>
       <div class="project__client-name info">{{ project.client_name}}</div>
       <div class="project__address info">{{ project.address }}</div>
-      <div class="project__bth-box">
-        <button class="btn open__btn">
-          <img class = "open__picture" src="@/assets/openProject__picture.svg">
-        </button>
-        <button class="btn delete__btn">
-          <img class = "delete__picture" src="@/assets/delete__picture.svg">
-        </button>                    
-      </div>
+    </div>
+    <div class="project__bth-box">
+      <button class="btn open__btn">
+        <img class = "open__picture" src="@/assets/openProject__picture.svg">
+      </button>
+      <button class="btn delete__btn">
+        <img class = "delete__picture" src="@/assets/delete__picture.svg">
+      </button>                    
     </div>
   </div>
 </template>
@@ -50,7 +50,7 @@ export default {
       background-color: #CCF3E9;
     }
   .project-info__container{
-    width: 100%;
+    width: 60rem;
     padding: 1.5rem 2.5rem 1.5rem 2.5rem;
     display: flex;
     justify-content: space-between;
@@ -61,6 +61,8 @@ export default {
   }
   .project__bth-box{
     padding-top: 0.4rem;
+    margin-left: auto;
+    padding: 1.8rem 2.5rem 1.8rem 2.5rem;
     .btn{
       width: 2.3rem;
       height: 2.3rem;
@@ -85,6 +87,7 @@ export default {
     }
     .delete__btn{
       background-color: #F9DDD9;
+      padding-top: 0.1rem;
     }
 
     .open__btn:hover{

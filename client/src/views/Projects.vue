@@ -5,8 +5,12 @@
         Проекты за 2023 год
       </div>
       <custom-button>
-        Новый проект
-        <img class="projects__img" src="@/assets/add__picture.svg">
+        <div class="button__content">  
+          <div class="button__title">
+            Новый проект
+          </div>
+          <img class="projects__img" src="@/assets/add__picture.svg">
+        </div>
       </custom-button>
     </div>
     <local-navbar :menu_items = "menu_items" :active_menu_item = "active_menu_item" @change="changeActive"/>
@@ -65,7 +69,11 @@ export default {
       color: #525252;
     }
     .projects__img{
-      width: 1rem;
+      width: 0.8rem;
+    }
+    .button__content{
+      display: flex;
+      justify-content: space-between;
     }
   }
   .projects__search{
