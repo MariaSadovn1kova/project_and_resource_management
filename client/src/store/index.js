@@ -1,14 +1,11 @@
 import { createStore } from 'vuex'
 
-export default createStore({
-  state: {
-  },
-  getters: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
-  }
+const store = createStore({
+    state() {
+      return{
+        active_sidebar_menu_item: ''
+      }
+    }
 })
+
+export default store;

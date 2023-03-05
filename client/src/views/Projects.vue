@@ -18,6 +18,7 @@
     <local-navbar :menu_items = "menu_items" :active_menu_item = "active_menu_item" @change="changeActive"/>
     <input class="projects__search" type="text" placeholder="Адрес проекта..." v-model="searchQuery">
     <project-list :projects = "sortedAndSearchProject"/>
+    <p>{{$store.state.active_sidebar_menu_item}}</p>
   </div>
 </template>
 
@@ -30,17 +31,11 @@ export default {
         { id: 2, title: 'Текущие проекты', name: 'unfinished' },
         { id: 3, title: 'Завершенные проекты', name: 'finished' }
       ],
-      sidebar_menu_items:[
-        { title:'2021'},
-        { title:'2022'},
-        { title:'2023'},
-      ],
       projects: [
         {id: 1, address: 'ул. Поленова 30', client_name: 'Иванов Иван Иванович', date: '12.01.2020', status: 'unfinished'},
         {id: 2, address: 'ул. Некрасова 31', client_name: 'Петров Петр Петрович', date: '12.01.2023', status: 'finished'},
       ],
       active_menu_item: 'all',
-      active_sidebar_menu_item: '2023',
       searchQuery: '',
       selectedSort: '',
     }
