@@ -22,7 +22,7 @@ export default {
         }
     },
     methods: {
-        setActive(newActive){
+        setActive(newActive, sidebarActive){
             this.activePage = newActive;
         }
     }

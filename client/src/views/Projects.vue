@@ -2,9 +2,9 @@
   <div class="projects__container">
     <div class="header__container">
       <div class="projects__tittle">
-        Проекты за 2023 год
+        Проекты за {{this.$store.state.active_sidebar_menu_item}} год
       </div>
-      <router-link to="/">
+      <router-link to="/create_project">
         <custom-button>
         <div class="button__content">  
           <div class="button__title">
@@ -18,7 +18,6 @@
     <local-navbar :menu_items = "menu_items" :active_menu_item = "active_menu_item" @change="changeActive"/>
     <input class="projects__search" type="text" placeholder="Адрес проекта..." v-model="searchQuery">
     <project-list :projects = "sortedAndSearchProject"/>
-    <p>{{$store.state.active_sidebar_menu_item}}</p>
   </div>
 </template>
 
@@ -36,6 +35,7 @@ export default {
         {id: 2, address: 'ул. Некрасова 31', client_name: 'Петров Петр Петрович', date: '12.01.2023', status: 'finished'},
       ],
       active_menu_item: 'all',
+      active_sidebar_menu_item: '2023',
       searchQuery: '',
       selectedSort: '',
     }
@@ -43,7 +43,7 @@ export default {
   methods: {
     changeActive(active){
       this.active_menu_item = active;
-    }
+    },
   },
   computed:{
         sortedProject(){

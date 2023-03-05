@@ -4,6 +4,7 @@
     <div class="app__container">
       <main-sidebar v-if = "this.$route.name=='Projects'" class="main__sidebar" :sidebar_menu_items = "sidebar_projects_items" :default_active_item = "sidebar_projects_items[0]"/>
       <main-sidebar v-if = "this.$route.name=='Materials'" class="main__sidebar" :sidebar_menu_items = "sidebar_materials_items" :default_active_item = "sidebar_projects_items[0]"/>
+      <main-sidebar v-if = "this.$route.name=='CreateProject'" class="main__sidebar" :sidebar_menu_items = "sidebar_create_project_items" :default_active_item = "sidebar_projects_items[0]"/>
       <router-view class="router-view"/>
     </div>
   </div>
@@ -22,6 +23,11 @@
         { title:'Фундамент'},
         { title:'Коробка'},
         { title:'Крыша'},
+        ],
+        sidebar_create_project_items:[
+        { title:'Здания и клиент'},
+        { title:'Смета'},
+        { title:'Список стройматериалов'},
         ],
       }
     }
