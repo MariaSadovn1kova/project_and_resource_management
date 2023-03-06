@@ -2,9 +2,9 @@
   <div class="app">
     <main-navbar class="main__navbar"/>
     <div class="app__container">
-      <main-sidebar v-if = "this.$route.name=='Projects'" class="main__sidebar" :sidebar_menu_items = "sidebar_projects_items" :default_active_item = "sidebar_projects_items[0]"/>
-      <main-sidebar v-if = "this.$route.name=='Materials'" class="main__sidebar" :sidebar_menu_items = "sidebar_materials_items" :default_active_item = "sidebar_projects_items[0]"/>
-      <main-sidebar v-if = "this.$route.name=='CreateProject'" class="main__sidebar" :sidebar_menu_items = "sidebar_create_project_items" :default_active_item = "sidebar_projects_items[0]"/>
+      <main-sidebar v-if = "this.$route.name=='Projects'" class="main__sidebar" :sidebar_menu_items = "sidebar_projects_items" :page="'Project'"/>
+      <main-sidebar v-if = "this.$route.name=='Materials'" class="main__sidebar" :sidebar_menu_items = "sidebar_materials_items" :page="'Materials'"/>
+      <main-sidebar v-if = "this.$route.name=='CreateProject'" class="main__sidebar" :sidebar_menu_items = "sidebar_create_project_items" :page="'CreateProject'"/>
       <router-view class="router-view"/>
     </div>
   </div>
@@ -15,9 +15,9 @@
     data() {
       return{
         sidebar_projects_items:[
-        { title:'2021'},
-        { title:'2022'},
         { title:'2023'},
+        { title:'2022'},
+        { title:'2021'},
         ],
         sidebar_materials_items:[
         { title:'Фундамент'},

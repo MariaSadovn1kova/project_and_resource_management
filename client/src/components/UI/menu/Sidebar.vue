@@ -1,7 +1,7 @@
 <template>
   <div class="sidebar__container">
     <div class="sidebar__element-container">
-        <div :class="{'active' :this.$store.state.active_sidebar_menu_item == sidebar_menu_item.title}" class="sidebar__element" 
+        <div :class="{'active' :this.active == sidebar_menu_item.title}" class="sidebar__element" 
             v-for="sidebar_menu_item in sidebar_menu_items" 
             :key="sidebar_menu_item.title" 
             @click="changeActiveSidebar(sidebar_menu_item.title)">
@@ -16,6 +16,7 @@ export default {
     name: 'main-sidebar',
     data(){
         return{
+            active: ''
         }
     },
     props: {
@@ -23,14 +24,22 @@ export default {
             type: Array,
             required: true
         },
-        default_active_item: {
-            type: Object,
-            required: true
-        },
+        page: ''
     },
     methods: {
         changeActiveSidebar(newActive) {
-            this.$store.state.active_sidebar_menu_item = newActive
+            this.active = newActive
+            if (this.page === 'Project'){
+                this.$store.state.active_sidebar_project_item = newActive
+            } else if (this.page === 'Materials'){
+                this.$store.state.active_sidebar_create_project_item = newActive
+            } else if (this.page === 'CreateProject'){
+                this.$store.state.active_sidebar_matertials_item = newActive
+            }
+            console.log(this.$store.state.active_sidebar_project_item)
+            console.log(this.$store.state.active_sidebar_create_project_item)
+            console.log(this.$store.state.active_sidebar_matertials_item)
+
         }
     },
 }

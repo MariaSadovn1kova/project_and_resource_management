@@ -2,7 +2,7 @@
   <div class="projects__container">
     <div class="header__container">
       <div class="projects__tittle">
-        Проекты за {{this.$store.state.active_sidebar_menu_item}} год
+        Проекты за {{this.$store.state.active_sidebar_project_item}} год
       </div>
       <router-link to="/create_project">
         <custom-button>
