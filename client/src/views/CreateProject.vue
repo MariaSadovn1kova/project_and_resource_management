@@ -2,7 +2,7 @@
   <div class="create-project__container">
     <div class="header__container">
       <div class="projects__tittle">
-        Проекты за 2023 год
+        Создать новый проект
       </div>
         <custom-button class="save__btn">
         <div class="button__content">  
@@ -13,12 +13,19 @@
         </div>
       </custom-button>
     </div>
-    <div class=""></div>
+    <div class="border"></div>
+    <div class="create-project__subtitle"> 
+      <div class="decorate__border"></div>
+      <div class="subtitle">Заполните данные о клиенте</div>
+    </div>
+    <client-form/>
   </div>
 </template>
 
 <script>
+import ClientForm from '../components/UI/create_project/ClientForm.vue'
 export default {
+  components: { ClientForm },
 
 }
 </script>
@@ -40,6 +47,25 @@ export default {
     }
     .save__btn{
         width: 10rem;
+    }
+  }
+  .border{
+    height: 1px;
+    background-color: #D9D9D9;
+    margin: 2rem 0 2rem 0;
+  }
+
+  .create-project__subtitle{
+    display: flex;
+    margin-bottom: 1rem;
+    .decorate__border{
+      width: 0.5rem;
+      height: 2.5rem;
+      background: #34CAA5;
+    }
+    .subtitle{
+      color: #828282;
+      padding: 0.7rem 0 0 1rem;
     }
   }
 </style>

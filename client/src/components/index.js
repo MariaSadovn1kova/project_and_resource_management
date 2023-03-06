@@ -5,6 +5,9 @@ import ProjectItem from "@/components/UI/projects/ProjectItem"
 import ProjectList from "@/components/UI/projects/ProjectList"
 import CustomButton from "@/components/UI/buttons/CustomButton"
 import DownloadButton from "@/components/UI/buttons/DownloadButton"
+import ClientForm from "@/components/UI/create_project/ClientForm"
+import CustomInput from "@/components/UI/input/CustomInput"
+import CustomTextarea from "@/components/UI/input/CustomTextarea"
 
 export default [
     Navbar,
@@ -13,5 +16,8 @@ export default [
     LocalNavbar,
     ProjectItem,
     ProjectList,
-    DownloadButton
+    DownloadButton,
+    ClientForm,
+    CustomInput, 
+    CustomTextarea
 ]
