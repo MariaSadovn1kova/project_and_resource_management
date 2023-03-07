@@ -8,6 +8,7 @@ import DownloadButton from "@/components/UI/buttons/DownloadButton"
 import ClientForm from "@/components/UI/create_project/ClientForm"
 import CustomInput from "@/components/UI/input/CustomInput"
 import CustomTextarea from "@/components/UI/input/CustomTextarea"
+import BuildingForm from "@/components/UI/create_project/BuildingForm"
 
 export default [
     Navbar,
@@ -19,5 +20,6 @@ export default [
     DownloadButton,
     ClientForm,
     CustomInput, 
-    CustomTextarea
+    CustomTextarea,
+    BuildingForm
 ]

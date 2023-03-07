@@ -19,6 +19,11 @@
       <div class="subtitle">Заполните данные о клиенте</div>
     </div>
     <client-form/>
+    <div class="create-project__subtitle"> 
+      <div class="decorate__border"></div>
+      <div class="subtitle">Заполните данные о зданиях</div>
+    </div>
+    <building-form/>
   </div>
 </template>
 
@@ -52,11 +57,12 @@ export default {
   .border{
     height: 1px;
     background-color: #D9D9D9;
-    margin: 2rem 0 2rem 0;
+    margin: 2rem 0 0 0;
   }
 
   .create-project__subtitle{
     display: flex;
+    margin-top: 2rem;
     margin-bottom: 1rem;
     .decorate__border{
       width: 0.5rem;
