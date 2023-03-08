@@ -9,6 +9,11 @@ import ClientForm from "@/components/UI/create_project/ClientForm"
 import CustomInput from "@/components/UI/input/CustomInput"
 import CustomTextarea from "@/components/UI/input/CustomTextarea"
 import BuildingForm from "@/components/UI/create_project/BuildingForm"
+import GeneralInfo from "@/components/UI/create_project/building/GeneralInfo"
+import FoundationInfo from "@/components/UI/create_project/building/FoundationInfo"
+import WallsInfo from "@/components/UI/create_project/building/WallsInfo"
+import OverlapInfo from "@/components/UI/create_project/building/OverlapInfo"
+import RoofInfo from "@/components/UI/create_project/building/RoofInfo"
 
 export default [
     Navbar,
@@ -21,5 +26,10 @@ export default [
     ClientForm,
     CustomInput, 
     CustomTextarea,
-    BuildingForm
+    BuildingForm,
+    GeneralInfo,
+    FoundationInfo,
+    WallsInfo,
+    OverlapInfo,
+    RoofInfo
 ]

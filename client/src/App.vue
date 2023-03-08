@@ -4,7 +4,7 @@
     <div class="app__container">
       <main-sidebar v-if = "this.$route.name=='Projects'" class="main__sidebar" :sidebar_menu_items = "sidebar_projects_items" :page="'Project'" :default_active_item = "sidebar_projects_items[0].title"/>
       <main-sidebar v-if = "this.$route.name=='Materials'" class="main__sidebar" :sidebar_menu_items = "sidebar_materials_items" :page="'Materials'" :default_active_item = "sidebar_materials_items[0].title"/>
-      <main-sidebar v-if = "this.$route.name=='CreateProject'" class="main__sidebar" :sidebar_menu_items = "sidebar_create_project_items" :page="'CreateProject'"/>
+      <main-sidebar v-if = "this.$route.name=='CreateProject'" class="main__sidebar" :sidebar_menu_items = "sidebar_create_project_items" :page="'CreateProject'" :default_active_item = "sidebar_create_project_items[0].title"/>
       <router-view class="router-view"/>
     </div>
   </div>

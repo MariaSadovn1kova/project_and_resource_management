@@ -1,11 +1,20 @@
 <template>
   <div class="building-form__container">
     <local-navbar :menu_items = "menu_items" :active_menu_item = "active_menu_item" @change="changeActive"/>
+    <div class="content__container">
+        <general-info v-if="this.active_menu_item === 'general_info'"/>
+        <foundation-info v-if="this.active_menu_item === 'foundation'"/>
+        <walls-info v-if="this.active_menu_item === 'walls'"/>
+        <overlap-info v-if="this.active_menu_item === 'overlap'"/>
+        <roof-info v-if="this.active_menu_item === 'roof'"/>
+    </div>
   </div>
 </template>
 
 <script>
+import RoofInfo from './building/RoofInfo.vue';
 export default {
+  components: { RoofInfo },
     name: 'building-form',
     data(){
         return{
@@ -30,9 +39,12 @@ export default {
 
 <style lang="scss" scoped>
 .building-form__container{
-    padding: 3rem;
+    padding: 2.5rem 3rem;
     border-radius: 0.5rem;
     background-color: #fff;
     box-shadow: 0px 0px 4px #c7cac9;
+    .content__container{
+        margin-top: 2rem;
+    }
 }
 </style>
