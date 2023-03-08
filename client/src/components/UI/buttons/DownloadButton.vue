@@ -13,18 +13,18 @@ export default {
 
 <style lang="scss" scoped>
 .download-button__container{
-    background-color: #E8F6F3;
+    background-color: #dbf1ed;
     width: 7rem;
-    height: 3rem;
     display: flex;
     border-radius: 5rem;
-    padding: 1rem 1.5rem 1rem 1.5rem;
+    padding: 1rem 1.8rem;
     justify-content: space-between;
     border: none;
 
     .download-button__text{
         color: #34CAA5;
         font-weight: 600;
+        margin-right: 0.4rem;
     }
 
     .download-button__picture{
@@ -34,7 +34,7 @@ export default {
 
 .download-button__container:hover{
     cursor: pointer;
-    background-color: #d9f3ed;
+    background-color: #c7ece2;
 }
 
 </style>
