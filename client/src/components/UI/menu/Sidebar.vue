@@ -16,7 +16,7 @@ export default {
     name: 'main-sidebar',
     data(){
         return{
-            active: ''
+            active: this.default_active_item
         }
     },
     props: {
@@ -24,7 +24,8 @@ export default {
             type: Array,
             required: true
         },
-        page: ''
+        page: '',
+        default_active_item: ''
     },
     methods: {
         changeActiveSidebar(newActive) {
