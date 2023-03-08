@@ -37,11 +37,11 @@ export default {
             } else if (this.page === 'CreateProject'){
                 this.$store.state.active_sidebar_matertials_item = newActive
             }
-            console.log(this.$store.state.active_sidebar_project_item)
-            console.log(this.$store.state.active_sidebar_create_project_item)
-            console.log(this.$store.state.active_sidebar_matertials_item)
-
         }
+    },
+
+    mounted(){
+        this.changeActiveSidebar(this.active);
     },
 }
 </script>

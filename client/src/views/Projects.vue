@@ -35,7 +35,6 @@ export default {
         {id: 2, address: 'ул. Некрасова 31', client_name: 'Петров Петр Петрович', date: '12.01.2023', status: 'finished'},
       ],
       active_menu_item: 'all',
-      active_sidebar_menu_item: '2023',
       searchQuery: '',
       selectedSort: '',
     }
@@ -44,6 +43,7 @@ export default {
     changeActive(active){
       this.active_menu_item = active;
     },
+
   },
   computed:{
         sortedProject(){
