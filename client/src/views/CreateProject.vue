@@ -29,13 +29,18 @@
       </div>
       <building-form/>
     </div>
+    <div class="estimate" v-if="this.$store.state.active_sidebar_matertials_item === 'Смета'">
+      <div class="create-project__subtitle"> 
+        <div class="decorate__border"></div>
+        <div class="subtitle">Здание 1</div>
+      </div>
+      <estimate/>
+    </div>
   </div>
 </template>
 
 <script>
-import ClientForm from '../components/UI/create_project/ClientForm.vue'
 export default {
-  components: { ClientForm },
 
 }
 </script>
@@ -68,7 +73,7 @@ export default {
   .border{
     height: 1px;
     background-color: #D9D9D9;
-    margin: 2rem 0 0 0;
+    margin: 1rem 0 0 0;
   }
 
   .create-project__subtitle{
