@@ -61,16 +61,16 @@ export default {
         }
 
         .sidebar__element:hover{
-            background-color: #E8F6F3;
-            color: #34CAA5;
+            background-color: #FFEDE9;
+            color: #FF594B;
             cursor: pointer;
             font-weight: 600;
         }
 
         .active{
-            background-color: #E8F6F3;
-            color: #34CAA5;
-            border-left: 5px solid #34CAA5;
+            background-color: #FFEDE9;
+            color: #FF594B;
+            border-left: 5px solid #FF594B;
         }
     }
 </style>

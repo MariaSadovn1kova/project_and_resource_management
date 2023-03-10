@@ -11,10 +11,6 @@
       <div class="project__address info">{{ project.address }}</div>
     </div>
     <div class="project__bth-box">
-      <button class="btn open__btn">
-        <div class="open__title">Открыть</div>
-        <img class = "open__picture" src="@/assets/openProject__picture.svg">
-      </button>
       <button class="btn delete__btn">
         <img class = "delete__picture" src="@/assets/delete__picture.svg">
       </button>                    
@@ -52,7 +48,7 @@ export default {
     }
   }
     .unfinished{
-      background-color: #D3EFFF;
+      background-color: #FFDAD1;
     }
     .finished{
       background-color: #CCF3E9;
@@ -113,6 +109,9 @@ export default {
     .delete__btn:hover{
       background-color: #f8cac3;
     }
+  }
+  .project-item__container:hover {
+    cursor:pointer;
   }
 }
 </style>

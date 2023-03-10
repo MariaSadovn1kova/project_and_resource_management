@@ -12,6 +12,7 @@
       </div>
       <div class="table__title">Материалы</div>
       <div class="table__item"></div>
+      <div class="table__item dark"></div>
     </div>
   </div>
 </template>
@@ -46,14 +47,15 @@ export default {
     .estimate__table{
       margin-top: 2rem;
       .table__header{
-        background-color: #CCF3E9;
+        background-color: #FFE8E2;
         height: 3rem;
         border-radius: 0.5rem 0.5rem 0 0;
         display: flex;
         justify-content: space-around;
         .header__item{
           padding: 0.9rem;
-          color: #2FB592;
+          color: #FF594B;
+          font-weight: 600;
         }
       }
       .table__title{
@@ -61,8 +63,12 @@ export default {
         margin: 1rem 0;
       }
       .table__item{
-        border: 2px solid #E6FEF8;
+        border: 2px solid #FFEDE9;
         height: 3rem;
+        margin-bottom: 0.8rem;
+      }
+      .table__item.dark{
+        background-color: #FFF8F6;
       }
     }
   }

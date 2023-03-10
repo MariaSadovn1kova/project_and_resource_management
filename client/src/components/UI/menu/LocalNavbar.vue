@@ -33,11 +33,11 @@ export default {
         color: #828282;
     }
     .local-navbar__item.active{
-        color:#34CAA5;
-        border-bottom: 3px solid #34CAA5;
+        color:#FF594B;
+        border-bottom: 3px solid #FF594B;
     }
     .local-navbar__item:hover{
-        color: #34CAA5;
+        color: #FF594B;
         cursor: pointer;
     }
 }
