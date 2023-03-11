@@ -62,6 +62,7 @@ export default {
     display: flex;
     justify-content: space-between;
     .projects__tittle{
+      padding-top: 0.5rem;
       font-size: 1.2rem;
       color: #525252;
     }

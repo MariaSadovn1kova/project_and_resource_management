@@ -1,6 +1,22 @@
 <template>
   <div class="estimate__container">
-    <local-navbar :menu_items = "menu_items" :active_menu_item = "active_menu_item" @change="changeActive"/>
+    <local-navbar :menu_items = "menu_items" :active_menu_item = "active_menu_item" @change="changeActive">
+      <div class="navbar__container">
+        <div class="total">
+          <div>
+            Итого:
+          </div>
+          <div class="total__value">
+            3 500 000, 00
+          </div>
+        </div>
+        <custom-subbutton class="custom-subbutton">
+          <div class="button__content">  
+            <img class="projects__img" src="@/assets/add__picture_dark.svg">
+          </div>
+        </custom-subbutton>
+      </div>
+    </local-navbar>
     <div class="estimate__table">
       <div class="table__header">
         <div class="header__item">П/П</div>
@@ -44,17 +60,38 @@ export default {
     border-radius: 0.5rem;
     background-color: #fff;
     box-shadow: 0px 0px 4px #c7cac9;
+    .custom-subbutton{
+      .projects__img{
+        width: 0.8rem;
+      }
+      .button__content{
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    .navbar__container{
+      display: flex;
+      .total{
+        display: flex;
+        color: #FF594B;
+        margin: 0.9rem;
+      }
+      .total__value{
+        font-weight: 600;
+        margin-left: 1rem;
+      }
+    }
     .estimate__table{
       margin-top: 2rem;
       .table__header{
-        background-color: #FFE8E2;
+        background-color: #e7f8f5;
         height: 3rem;
         border-radius: 0.5rem 0.5rem 0 0;
         display: flex;
         justify-content: space-around;
         .header__item{
           padding: 0.9rem;
-          color: #FF594B;
+          color: #34CAA5;
           font-weight: 600;
         }
       }
@@ -63,12 +100,12 @@ export default {
         margin: 1rem 0;
       }
       .table__item{
-        border: 2px solid #FFEDE9;
+        border: 2px solid #dbf1ed;
         height: 3rem;
         margin-bottom: 0.8rem;
       }
       .table__item.dark{
-        background-color: #FFF8F6;
+        background-color: #effaf8;
       }
     }
   }

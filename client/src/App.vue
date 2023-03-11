@@ -63,6 +63,7 @@
         .router-view{
           width: 100%;
           padding: 8rem 6rem 0rem 6rem;
+          margin-bottom: 10rem;
         }
       }
     }

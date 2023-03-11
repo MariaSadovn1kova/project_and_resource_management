@@ -36,7 +36,7 @@ export default {
     }
     .right__container{
         .input{
-            width: 60rem;
+            width: 50rem;
             min-width: 20rem;
             height: 20rem;
         }
