@@ -10,7 +10,7 @@
             3 500 000, 00
           </div>
         </div>
-        <custom-subbutton class="custom-subbutton">
+        <custom-subbutton class="custom-subbutton" @click="showDialog">
           <div class="button__content">  
             <img class="projects__img" src="@/assets/add__picture_dark.svg">
           </div>
@@ -30,6 +30,7 @@
       <div class="table__item"></div>
       <div class="table__item dark"></div>
     </div>
+    <estimate-dialog v-model:show="dialogVisible"/>
   </div>
 </template>
 
@@ -44,12 +45,16 @@ export default {
             { id: 3, title: 'Крыша', name: 'roof' }
             ],
             active_menu_item: 'foundation',
+            dialogVisible: false
         }
     },
     methods: {
-        changeActive(active){
+      changeActive(active){
         this.active_menu_item = active;
-        },
+      },
+      showDialog(){
+        this.dialogVisible = true;
+      }
     },
 }
 </script>

@@ -14,8 +14,9 @@ import FoundationInfo from "@/components/UI/create_project/building/FoundationIn
 import WallsInfo from "@/components/UI/create_project/building/WallsInfo"
 import OverlapInfo from "@/components/UI/create_project/building/OverlapInfo"
 import RoofInfo from "@/components/UI/create_project/building/RoofInfo"
-import Estimate from "@/components/UI/create_project/Estimate"
+import Estimate from "@/components/UI/create_project/estimate/Estimate"
 import CustomSubButton from "@/components/UI/buttons/CustomSubButton"
+import EstimateDialog from "@/components/UI/create_project/estimate/EstimateDialog"
 
 export default [
     Navbar,
@@ -35,5 +36,6 @@ export default [
     OverlapInfo,
     RoofInfo,
     Estimate,
-    CustomSubButton
+    CustomSubButton,
+    EstimateDialog
 ]

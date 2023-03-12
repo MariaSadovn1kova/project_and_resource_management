@@ -19,17 +19,11 @@
     <div class="border"></div>
     <div class="building__client" v-if="this.$store.state.active_sidebar_matertials_item === 'Здания и клиент'">
       <div class="create-project__subtitle"> 
-        <div class="title">
-          <div class="decorate__border"></div>
-          <div class="subtitle">Заполните данные о клиенте</div>
-        </div>
+      <div class="subtitle">Заполните данные о клиенте</div>
       </div>
       <client-form/>
       <div class="create-project__subtitle"> 
-        <div class="title">
-          <div class="decorate__border"></div>
-          <div class="subtitle">Заполните данные о зданиях</div>
-        </div>
+      <div class="subtitle">Заполните данные о зданиях</div>
         <div class="btn__container">
           <custom-subbutton class="custom-subbutton">
             <div class="button__content">  
@@ -42,10 +36,7 @@
     </div>
     <div class="estimate" v-if="this.$store.state.active_sidebar_matertials_item === 'Смета'">
       <div class="create-project__subtitle"> 
-        <div class="title">
-          <div class="decorate__border"></div>
-          <div class="subtitle">Здание 1</div>
-        </div>
+        <div class="subtitle">Здание 1</div>
       </div>
       <estimate/>
     </div>
@@ -103,17 +94,8 @@ export default {
     justify-content: space-between;
     margin-top: 2rem;
     margin-bottom: 1rem;
-    .title{
-      display: flex;
-    }
-    .decorate__border{
-      width: 0.5rem;
-      height: 2.5rem;
-      background: #34CAA5;
-    }
     .subtitle{
       color: #828282;
-      padding: 0.7rem 0 0 1rem;
     }
   }
 </style>

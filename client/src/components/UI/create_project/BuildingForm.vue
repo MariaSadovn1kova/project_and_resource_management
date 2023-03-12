@@ -12,9 +12,7 @@
 </template>
 
 <script>
-import RoofInfo from './building/RoofInfo.vue';
 export default {
-  components: { RoofInfo },
     name: 'building-form',
     data(){
         return{
