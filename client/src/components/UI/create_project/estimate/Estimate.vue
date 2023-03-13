@@ -30,7 +30,18 @@
       <div class="table__item"></div>
       <div class="table__item dark"></div>
     </div>
-    <estimate-dialog v-model:show="dialogVisible"/>
+    <estimate-dialog v-model:show="dialogVisible">
+      <custom-input :input_title = "'Раздел'" class="input"/>
+      <div class="input__container">
+        <custom-input :input_title = "'Наименование'" class="input"/>
+        <custom-input :input_title = "'Ед. Изм.'" class="input"/>
+        <custom-input :input_title = "'Количество'" class="input"/>
+        <custom-input :input_title = "'Стоимость за ед.'" class="input"/>
+      </div>
+      <div class="custom-button__container">
+        <custom-button>Сохранить</custom-button>
+      </div>
+    </estimate-dialog>
   </div>
 </template>
 
@@ -65,6 +76,15 @@ export default {
     border-radius: 0.5rem;
     background-color: #fff;
     box-shadow: 0px 0px 4px #c7cac9;
+    .input__container{
+      display: flex;
+      justify-content: space-between;
+    }
+    .custom-button__container{
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 2rem;
+    }
     .custom-subbutton{
       .projects__img{
         width: 0.8rem;

@@ -33,11 +33,11 @@ export default {
     position: fixed;
     display: flex;
     .dialog__content{
-      padding: 3rem;
+      padding: 4rem 3rem;
       margin: auto;
       background: white;
       border-radius:0.5rem;
-      height: 30rem;
+      height: 22rem;
       width: 70rem;
   }
 }
